@@ -1,20 +1,24 @@
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 
 RUN apt-get update
 RUN apt-get install -y cmake build-essential autoconf git libtool python3-setuptools libboost-all-dev
 RUN apt-get install -y golang
-RUN apt-get install -y clang-9 libclang-9-dev llvm-9-dev curl gperf libgmp-dev
-RUN apt-get install -y cmake bison flex libboost-all-dev python perl minisat
+RUN apt-get install -y clang-12 libclang-12-dev llvm-12-dev curl gperf libgmp-dev
+RUN apt-get install -y cmake bison flex libboost-all-dev python3 perl minisat
 
 #protobuf
-RUN git clone https://github.com/protocolbuffers/protobuf.git /protobuf  && \
-    cd /protobuf && \
-    git submodule update --init --recursive && \
-    ./autogen.sh && \
-    ./configure  && \
-    make -j && \
-    make install && \
-    ldconfig
+# RUN git clone https://github.com/protocolbuffers/protobuf.git /protobuf  && \
+#     cd /protobuf && \
+#     git submodule update --init --recursive && \
+#     #./autogen.sh && \
+#     #./configure  && \
+#     mkdir build && \
+#     cd build && \
+#     cmake .. && \
+#     make -j && \
+#     make install && \
+#     ldconfig
+RUN apt install -y protobuf-compiler
 
 
 
