@@ -31,4 +31,5 @@ COPY . /src/jigsaw
 
 RUN cd /src/jigsaw/ && mkdir build && cd build && cmake .. && make rgd -j
 
-
+#readelf
+RUN tar -xvf /src/jigsaw/readelf.txz 

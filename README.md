@@ -29,4 +29,9 @@ Example:
 
 https://jigsaw.cs.ucr.edu
 
-
+**My Commands**
+Download the `readelf` file from the above website to the jigsaw directory in the local machine.
+Run using:
+```
+docker run jigsaw-test /src/jigsaw/build/rgd 1 0 /src/readelf_reload
+```
